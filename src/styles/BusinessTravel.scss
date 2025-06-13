@@ -1,0 +1,210 @@
+/* Business Travel Carbon Calculator Styles */
+
+.page-container {
+  padding-left: 15vw;
+  padding-right: 15vw;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.form-container {
+  flex: 1;
+  padding: 0.7rem;
+  
+  @media (min-width: 768px) {
+    padding: 1.2rem;
+    max-width: 50%;
+  }
+}
+
+.results-or-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  opacity: 0;
+  padding: 1rem;
+  
+  @media (max-width: 767px) {
+    margin-top: 2rem;
+  }
+}
+
+.page-title {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  opacity: 0;
+  
+  @media (min-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 1.8rem;
+  }
+}
+
+.carbon-form {
+  max-width: 600px;
+}
+
+.form-actions {
+  margin-top: 1.2rem;
+  opacity: 0;
+  
+  .btn-primary {
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.35);
+    }
+    
+    &:active {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+}
+
+.page-icon {
+  color: rgba(0, 152, 33, 0.8);
+  max-width: 300px;
+  animation: float 6s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+// Results styling
+.results-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.travel-container {
+  width: 100%;
+}
+
+.travel-visualization {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(to bottom, #43CE4F, #217A29); /* Fallback background */
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  flex: 1;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.85; /* Slightly transparent to preserve some of the gradient feel */
+}
+
+.distance-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: #38c96d;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.results-details-panel {
+  background: white;
+  border-radius: 0 0 16px 16px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  
+  .detail-card {
+    background: white;
+    border-radius: 12px;
+    width: 100%;
+    
+    h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #38c96d;
+      font-size: 1.2rem;
+      text-align: center;
+      border-bottom: 2px solid rgba(56, 201, 109, 0.3);
+      padding-bottom: 8px;
+    }
+    
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      
+      &:last-child {
+        border-bottom: none;
+      }
+      
+      .detail-label {
+        font-weight: bold;
+        color: #555;
+      }
+      
+      .detail-value {
+        color: #333;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// Ensure SVGs display properly
+:deep(svg) {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+// Add styles for loading and errors
+.error-message {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background-color: rgba(255, 87, 87, 0.2);
+  border-radius: 8px;
+  color: #ff5757;
+  font-weight: 500;
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

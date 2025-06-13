@@ -1,0 +1,64 @@
+/* Main styles file that imports all view styles */
+
+
+
+// Common styles that can be shared across views
+.page-container {
+  padding-left: 15vw;
+  padding-right: 15vw;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.results-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  
+  .btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    
+    &-secondary {
+      background-color: rgba(255, 255, 255, 0.2);
+      
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+    }
+    
+    &-primary {
+      background-color: rgba(255, 255, 255, 0.25);
+      
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.35);
+      }
+    }
+  }
+}
+
+// Animation keyframes
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
